@@ -4,8 +4,15 @@
   "description": "A calendar for creating flexible calendars.",
   "main": "index.js",
   "scripts": {
+    "start": "npm-run-all --parallel build bundle",
+    "start:prod": "npm-run-all --parallel build bundle:prod",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "clean-build": "rimraf ./build && mkdir build",
+    "clean": "npm-run-all clean-dist clean-build",
     "build": "tsc",
-    "bundle": "webpack"
+    "bundle": "webpack",
+    "bundle:prod": "cross-env NODE_ENV=production webpack",
+    "build-bundle": "npm-run-all --parallel build bundle bundle:prod"
   },
   "repository": {
     "type": "git",
@@ -25,6 +32,8 @@
   "homepage": "https://github.com/CalendarioFX/Calendario#readme",
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.0-beta.18",
+    "cross-env": "^3.1.4",
+    "npm-run-all": "^4.0.1",
     "source-map-loader": "^0.1.6",
     "typescript": "^2.1.5",
     "webpack": "^1.14.0"
