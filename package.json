@@ -1,6 +1,6 @@
 {
   "name": "calendariofx-calendario",
-  "version": "6.0.0",
+  "version": "6.0.0-alpha.1",
   "description": "A calendar for creating flexible calendars.",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,7 @@
     "clean": "npm-run-all clean-dist clean-build",
     "build": "tsc",
     "bundle": "webpack",
-    "bundle:prod": "cross-env NODE_ENV=production webpack",
-    "build-bundle": "npm-run-all --parallel build bundle bundle:prod"
+    "bundle:prod": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -31,11 +30,17 @@
   },
   "homepage": "https://github.com/CalendarioFX/Calendario#readme",
   "devDependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/moment-timezone": "^0.2.34",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "cross-env": "^3.1.4",
     "npm-run-all": "^4.0.1",
     "source-map-loader": "^0.1.6",
     "typescript": "^2.1.5",
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "moment-timezone": "^0.5.11"
   }
 }
