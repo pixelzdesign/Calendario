@@ -193,7 +193,7 @@
         if(self.month == v.getMonth()) html.push(this.curData[day].html[i])
         return true
       }, this)
-      return '<div class="fc-calendar-event">' + html.join('</div><div class="fc-calendar-event">') + '</div>'
+      return '<div class="fc-calendar-event">' + this.curData[day].html.join('</div><div class="fc-calendar-event">') + '</div>'
     }
     else return ''
   }
